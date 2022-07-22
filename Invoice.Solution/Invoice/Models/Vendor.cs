@@ -17,14 +17,14 @@ namespace Invoice.Models
       Orders = new List<Order>{};
     }
 
-    public static void ClearAll()
-    {
-      _instances.Clear();
-    }
-
     public static List<Vendor> GetAll()
     {
       return _instances;
+    }
+
+    public static void ClearVendors()
+    {
+      _instances.Clear();
     }
 
     public static Vendor Find(int searchId)

@@ -51,6 +51,12 @@ namespace Invoice.Controllers
       return View("Show", model);
     }
 
+    [HttpPost("/vendors/delete")]
+    public ActionResult DeleteAll()
+    {
+      Vendor.ClearVendors();
+      return View();
+    }
 
   }
 }
