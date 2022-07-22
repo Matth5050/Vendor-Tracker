@@ -39,11 +39,11 @@ namespace Invoice.Controllers
     }
     // this one creates new orders within a given vendor, not new vendors;
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult New(int vendorId, string orderDescription)
+    public ActionResult New(int vendorId, string orderTitle, string orderDescription, int orderPrice, int orderDate)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(orderDescription);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
