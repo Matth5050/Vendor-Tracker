@@ -1,20 +1,22 @@
 @{
   Layout = "_Layout";
 }
-
 @using Invoice.Models;
 
-<h3>Here are all the orders in this vendor:</h3>
-
-<ol>
-  @foreach (Order order in @Model["orders"])
-  {
-    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
-  }
-</ol>
-
-<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new Order</a></p>
-<p><a href='/vendors'>Return to vendor list</a></p>
-<p><a href='/'>Return to Main Page</a></p>
-
+<div class="container">
+  <h3>Here are all the orders in this vendor:</h3>
+  <ol>
+    @foreach (Order order in @Model["orders"])
+    {
+      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+    }
+  </ol>
+  <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+  <form action="/orders/delete" method="post">
+    <button type="submit" name="button">Clear all orders</button>
+  </form>
+  <br>
+  <p><a href='/vendors'>Return to vendor list</a></p>
+  <p><a href='/'>Return to Main Page</a></p>
+</div>
 @await Html.PartialAsync("Footer")

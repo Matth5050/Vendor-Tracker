@@ -2,13 +2,12 @@
   Layout = "_Layout";
 }
 
-<h1>vendor Details: </h1>
-
-<h2>@Model["order"].Description</h2>
-<h3>vendor: @Model["vendor"].Name</h3>
-
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
-<a href='/vendors'>View all vendors</a>
-
+<div class="container">
+  <h1>vendor Details: </h1>
+  <h2>@Model["order"].Description</h2>
+  <h3>vendor: @Model["vendor"].Name</h3>
+  <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
+  <a href='/vendors'>View all vendors</a>
+</div>
 @await Html.PartialAsync("Footer")
 
