@@ -57,6 +57,5 @@ namespace Invoice.Controllers
       Vendor.ClearAll();
       return View();
     }
-
   }
 }
