@@ -37,7 +37,7 @@ namespace Invoice.Controllers
       model.Add("orders", vendorOrders);
       return View(model);
     }
-    // this one creates new orders within a given vendor, not new vendors;
+ 
     [HttpPost("/vendors/{vendorId}/orders")]
     public ActionResult New(int vendorId, string orderTitle, string orderDescription, int orderPrice, DateTime orderDate)
     {
