@@ -54,7 +54,7 @@ namespace Invoice.Controllers
     [HttpPost("/vendors/delete")]
     public ActionResult DeleteAll()
     {
-      Vendor.ClearVendors();
+      Vendor.ClearAll();
       return View();
     }
 
