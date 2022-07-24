@@ -17,18 +17,21 @@ namespace Invoice.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test");
+      DateTime date = new DateTime(2008,04,14);
+      Order newOrder = new Order("testTitle", "testDescription", 10, date);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
 
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
       //Arrange
       string description = "Walk the dog.";
+      DateTime date = new DateTime(2008,04,14);
 
       //Act
-      Order newOrder = new Order(description);
+      Order newOrder = new Order("testTitle", description, 10, date);
       string result = newOrder.Description;
 
       //Assert
@@ -40,7 +43,9 @@ namespace Invoice.Tests
     {
       //Arrange
       string description = "Walk the dog.";
-      Order newOrder = new Order(description);
+      DateTime date = new DateTime(2008,04,14);
+      Order newOrder = new Order("testTitle", description, 10, date);
+      
 
       //Act
       string updatedDescription = "Do the dishes";
@@ -70,8 +75,9 @@ namespace Invoice.Tests
       //Arrange
       string description01 = "Walk the dog";
       string description02 = "Wash the dishes";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      DateTime date = new DateTime(2008,04,14);
+      Order newOrder1 = new Order("testTitle1", description01, 10, date);
+      Order newOrder2 = new Order("testTitle2", description02, 10, date);
       List<Order> newList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
@@ -85,7 +91,8 @@ namespace Invoice.Tests
     public void GetId_OrdersInstantiateWithAnIdAndGetterReturn_Int()
     {
       string description = "walk the dog.";
-      Order newOrder = new Order(description);
+      DateTime date = new DateTime(2008,04,14);
+      Order newOrder = new Order("testTitle1", description, 10, date);
       int result = newOrder.Id;
       Assert.AreEqual(1,result);
     }
@@ -96,8 +103,9 @@ namespace Invoice.Tests
       //Arrange
       string description01 = "Walk the dog";
       string description02 = "Wash the dishes";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      DateTime date = new DateTime(2008,04,14);
+      Order newOrder1 = new Order("testTitle1", description01, 10, date);
+      Order newOrder2 = new Order("testTitle2", description02, 10, date);
 
       //Act
       Order result = Order.Find(2);
