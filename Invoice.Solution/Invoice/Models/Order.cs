@@ -4,7 +4,7 @@ using System;
 namespace Invoice.Models
 {
   public class Order
-  { //zz
+  { 
     public string Title { get; set; }
     public string Description { get; set; }
     public int Price { get; set; }
@@ -36,6 +36,5 @@ namespace Invoice.Models
     {
       return _instances[searchId-1];
     }
-
   }
 }
