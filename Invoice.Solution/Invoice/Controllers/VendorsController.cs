@@ -51,6 +51,17 @@ namespace Invoice.Controllers
       return View("Show", model);
     }
 
+    [HttpGet("/vendors/{vendorId}/orders")]
+    public ActionResult Test(int vendorId )
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
+    }
+
     [HttpPost("/vendors/delete")]
     public ActionResult DeleteAll()
     {
