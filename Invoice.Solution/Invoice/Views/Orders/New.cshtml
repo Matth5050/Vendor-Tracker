@@ -6,15 +6,15 @@
   <h1>Add a new order to @Model.Name</h1>
   <form action="/vendors/@Model.Id/orders" method="post">
     <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
-    <label for="orderTitle">order title</label>
+    <label for="orderTitle">Order Title: </label>
     <input id="orderTitle" name="orderTitle" type="text">
-    <label for="orderDescription">order description</label>
+    <label for="orderDescription">Order Description: </label>
     <input id="orderDescription" name="orderDescription" type="text">
-    <label for="orderPrice">order price</label>
+    <label for="orderPrice">Order Price: </label>
     <input id="orderPrice" name="orderPrice" type="number">
-    <label for="orderDate">date</label>
+    <label for="orderDate">Date: </label>
     <input id="orderDate" name="orderDate" type="date">
-    <button type='submit'>Add order</button>
+    <button type='submit'>Add Order</button>
   </form>
 </div>
 @await Html.PartialAsync("Footer")

@@ -3,15 +3,15 @@
 }
 
 <div class="container">
-  <h1>vendor Details: </h1>
+  <h1>Vendor Details: </h1>
   <br>
-  <h3>@Model["order"].Title</h2>
-  <h6>@Model["order"].Description</h2>
-  <h6>@Model["order"].Price</h2>
-  <h6>@Model["order"].Date.Month/@Model["order"].Date.Month/@Model["order"].Date.Year</h2>
+  <h3>Order: @Model["order"].Title</h2>
+  <h6>Description: @Model["order"].Description</h2>
+  <h6>Price: $@Model["order"].Price</h2>
+  <h6>Date Ordered: @Model["order"].Date.Month/@Model["order"].Date.Month/@Model["order"].Date.Year</h2>
   <br>
   <br>
-  <h3>vendor: @Model["vendor"].Name</h3>
+  <h3>Vendor: @Model["vendor"].Name</h3>
   <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
   <a href='/vendors'>View all vendors</a>
 </div>
