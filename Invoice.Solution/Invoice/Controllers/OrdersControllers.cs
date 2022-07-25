@@ -6,7 +6,6 @@ namespace Invoice.Controllers
 {
   public class OrdersController : Controller
   {
-
     [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
@@ -24,12 +23,5 @@ namespace Invoice.Controllers
       model.Add("vendor", vendor);
       return View(model);
     }
-
-    // [HttpPost("/orders/delete")]
-    // public ActionResult DeleteAll()
-    // {
-    //   Order.ClearAll();
-    //   return View();
-    // }
   }
 }
