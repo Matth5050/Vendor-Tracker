@@ -52,7 +52,7 @@ namespace Invoice.Controllers
     }
 
     [HttpGet("/vendors/{vendorId}/orders")]
-    public ActionResult Test(int vendorId )
+    public ActionResult Display(int vendorId )
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
